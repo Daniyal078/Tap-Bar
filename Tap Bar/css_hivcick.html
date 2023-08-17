@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    body {
+        scroll-behavior: smooth;
+        transition: all 0.5s ease-in-out;
+        /* background: */
+
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        /* filter: blur(1.5rem); */
+    }
+
+    #icon_bar {
+        width: 700px;
+        height: 65px;
+        display: flex;
+        border-radius: 10px;
+        background-color: black;
+        position: relative;
+        padding: none;
+        border: 3px gold;
+        box-shadow: 0px 0px 300px 0px rgba(0, 0, 0, 0.381);
+        /* box-shadow:0px 0px 10px; */
+        margin-top: 300px;
+        background: filter blur(8px);
+    }
+
+    .icon_ul {
+        display: flex;
+        color: #fff;
+        align-items: center;
+        margin: auto;
+        z-index: 1;
+        padding: 0;
+        justify-content: center !important;
+    }
+
+    .icon_li {
+        display: flex;
+        justify-content: center !important;
+        margin-left: 90px;
+        align-items: center;
+        font-size: x-large;
+        cursor: pointer;
+    }
+
+    #ring {
+        background-color: black;
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -85%;
+        margin-left: 295px;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: rotate(45deg);
+        border-radius: 75px 0px 120px 0px;
+        /* z-index: -1; */
+        /* box-shadow: 0px 0px 10px 0px darkblue;  */
+    }
+
+    .icon_li_1 {
+        text-decoration: none;
+        list-style: none;
+        font-size: x-large;
+        cursor: pointer;
+        transition: all 0.5 ease-in-out;
+    }
+
+
+    /* _____________________________________second_click___________________________________ */
+
+    .icon_ul_onclick {
+        display: flex;
+        color: #fff;
+        align-items: center;
+        padding: 0;
+        margin-left: 80px;
+        justify-content: center !important;
+        position: absolute;
+        z-index: 1;
+        margin-top: -33px;
+    }
+
+    #icon_li_1_secondClick_1 {
+        text-decoration: none;
+        list-style: none;
+        font-size: x-large;
+        background-color: black;
+        padding: 30px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        /* z-index: 5; */
+        /* cursor: pointer; */
+    }
+
+    #icon_li_secondClick_2 {
+        display: flex;
+        justify-content: center !important;
+        margin-left: 30px;
+        align-items: center;
+        font-size: x-large;
+        background-color: black;
+        padding: 30px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        /* background-color: rgb(85, 238, 65); */
+        /* cursor: pointer; */
+    }
+
+    #icon_li_secondClick_3 {
+        display: flex;
+        justify-content: center !important;
+        margin-left: 30px;
+        align-items: center;
+        font-size: x-large;
+        background-color: gold;
+        background-color: black;
+        padding: 30px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        /* cursor: pointer; */
+    }
+
+    #icon_li_secondClick_4 {
+        display: flex;
+        justify-content: center !important;
+        margin-left: 30px;
+        align-items: center;
+        font-size: x-large;
+        background-color: seagreen;
+        background-color: black;
+        padding: 30px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        /* cursor: pointer; */
+    }
+
+    #icon_li_secondClick_5 {
+        display: flex;
+        justify-content: center !important;
+        margin-left: 30px;
+        align-items: center;
+        font-size: x-large;
+        background-color: rgb(255, 0, 208);
+        background-color: black;
+        padding: 30px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        /* cursor: pointer; */
+        color: lightsteelblue;
+
+    }
+
+    .btn_main {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #loop_Btn {
+        width: 245px;
+        font-family: monospace;
+        height: 50px;
+        border-radius: 10px;
+        background-color: black;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0xp 0px 30px 0px;
+        /* font-size: large; */
+        /* padding: 50px; */
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div id="icon_bar">
+
+            <!-- ______second_click_____ -->
+            <ul class="icon_ul">
+                <li class="icon_li_1"><i class="fa-solid fa-house" id="house"></i></li>
+                <li class="icon_li"><i class="fa-solid fa-user" id="user"></i></li>
+                <li class="icon_li"><i class="fa-solid fa-image"></i></li>
+                <li class="icon_li"><i class="fa-solid fa-camera" id="camera"></i></li>
+                <li class="icon_li"><i class="fa-solid fa-bars-staggered" id="staggered"></i></li>
+            </ul>
+            <ul class="icon_ul_onclick">
+                <li id="icon_li_1_secondClick_1"><i onclick="house()" class="fa-solid fa-house"></i></li>
+                <li id="icon_li_secondClick_2"><i onclick="user()" class="fa-solid fa-user"></i></li>
+                <li id="icon_li_secondClick_5"><i onclick="image()" class="fa-solid fa-image"></i></li>
+                <li id="icon_li_secondClick_3"><i onclick="Camera()" class="fa-solid fa-camera"></i></li>
+                <li id="icon_li_secondClick_4"><i onclick="staggered()" class="fa-solid fa-bars-staggered"></i></li>
+            </ul>
+
+            <div id="ring"></div>
+        </div>
+        <br>
+    </div>
+    <div class="btn_main">
+        <button onclick="loopButtonTrigger()" id="loop_Btn">Click Here To Automate Me</button>
+        <!-- <button onclick="loopButtonTerminator()" id="loop_Btn_close">Click Here To Stop Me</button> -->
+        <br>
+    </div>
+</body>
+
+<script>
+    function loopButtonTrigger() {
+        for (i = 0; i < 1000; i++) {
+            setTimeout(() => {
+                loopButton();
+            }, 1000 * i);
+        }
+        alert('now your work will done with loop');
+    }
+
+    function loopButton() {
+        setTimeout(house, 3000);
+        setTimeout(user, 2000);
+        setTimeout(image, 4000);
+        setTimeout(Camera, 5000);
+        setTimeout(staggered, 6000);
+    }
+
+    function house() {
+        document.getElementById('ring').style.marginLeft = '65px'
+        document.getElementById('icon_li_1_secondClick_1').style.boxShadow = '0px 0px 10px 0px white'
+        document.getElementById('ring').style.opacity = '100'
+        document.getElementById('icon_li_1_secondClick_1').style.opacity = '100'
+        document.getElementById('icon_li_1_secondClick_1').style.color = 'pink'
+        document.body.style.background = 'pink'
+        document.getElementById('icon_li_secondClick_2').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_3').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_4').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_5').style.opacity = '0'
+    }
+    function user() {
+        document.getElementById('ring').style.marginLeft = '178px'
+        document.getElementById('ring').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_2').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_2').style.boxShadow = '0px 0px 10px 0px white'
+        document.getElementById('icon_li_secondClick_2').style.color = 'lightBlue'
+        document.body.style.background = 'lightBlue'
+        document.getElementById('icon_li_1_secondClick_1').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_3').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_4').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_5').style.opacity = '0'
+    };
+    function image() {
+        document.getElementById('ring').style.marginLeft = '290px'
+        document.getElementById('ring').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_5').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_5').style.boxShadow = '0px 0px 10px 0px white'
+        document.getElementById('icon_li_secondClick_5').style.color = 'LightSeaGreen'
+        document.body.style.background = 'LightSeaGreen'
+        document.getElementById('icon_li_1_secondClick_1').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_2').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_3').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_4').style.opacity = '0'
+    };
+
+    function Camera() {
+        document.getElementById('ring').style.marginLeft = '405px'
+        document.getElementById('ring').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_3').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_3').style.boxShadow = '0px 0px 10px 0px white'
+        document.getElementById('icon_li_secondClick_3').style.color = 'lightcyan'
+        document.body.style.background = 'lightcyan'
+        document.getElementById('icon_li_1_secondClick_1').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_2').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_4').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_5').style.opacity = '0'
+    };
+
+    function staggered() {
+        document.getElementById('ring').style.marginLeft = '515px'
+        document.getElementById('ring').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_4').style.opacity = '100'
+        document.getElementById('icon_li_secondClick_4').style.boxShadow = '0px 0px 10px 0px white'
+        document.getElementById('icon_li_secondClick_4').style.color = 'PaleGoldenRod'
+        document.body.style.background = 'PaleGoldenRod'
+        document.getElementById('icon_li_1_secondClick_1').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_2').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_3').style.opacity = '0'
+        document.getElementById('icon_li_secondClick_5').style.opacity = '0'
+    };
+</script>
+
+</html>
